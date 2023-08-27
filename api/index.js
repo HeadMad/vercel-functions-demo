@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   //   res.status(200).send(result);
   // });
 
-  console.log(JSON.stringify(req.body));
+  // console.log(JSON.stringify(req.body));
   bot.process(req.body);
   res.status(200).send('');
 }
