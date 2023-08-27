@@ -3,12 +3,13 @@ import Telegrambo from "../lib/telegrambo/index.js";
 const bot = new Telegrambo(process.env.TOKEN);
 
 bot.on("message", (ctx) => {
-  console.log(ctx.update)
+  console.log(ctx.message)
+  // console.log('=============')
   ctx.sendMessage({
-    text: ctx.message.text
+    text: Date.now()
   })
   .then(console.log)
-  .catch(console.warn)
+  .catch(console.log)
   
 });
 
