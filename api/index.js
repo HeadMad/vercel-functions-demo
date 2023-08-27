@@ -24,7 +24,7 @@ export default async function handler(req, res) {
      "text": "thyuhe"
     }
    })
-    res.status(200).json(results);
+    res.status(200).json(results[0]);
   // bot.process(req.body);
   
 }
