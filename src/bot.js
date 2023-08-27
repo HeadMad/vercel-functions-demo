@@ -6,7 +6,7 @@ bot.on("message", (ctx) => {
   console.log(ctx.message)
   // console.log('=============')
   ctx.sendMessage({
-    text: Date.now()
+    text: ctx.message.text
   })
   .then(console.log)
   .catch(console.log)
