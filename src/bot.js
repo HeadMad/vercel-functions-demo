@@ -7,6 +7,8 @@ bot.on("message", (ctx) => {
   ctx.sendMessage({
     text: ctx.message.text
   })
+  .then(console.log)
+  .catch(console.warn)
   
 });
 
