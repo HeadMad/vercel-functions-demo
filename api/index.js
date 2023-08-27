@@ -6,4 +6,5 @@ export default async function handler(req, res) {
 
   console.log(JSON.stringify(req.body));
   bot.process(req.body);
+  res.status(200);
 }
