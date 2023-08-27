@@ -4,7 +4,7 @@ const bot = new Telegrambo(process.env.TOKEN);
 
 bot.on("message", (ctx) => {
   ctx.sendMessage({
-    text: ctx.message.text
+    text: JSON.stringify(ctx.update)
   })
   
 });
