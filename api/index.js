@@ -2,13 +2,12 @@
 import Telegrambo from "../lib/telegrambo/index.js";
 
 const bot = new Telegrambo(process.env.TOKEN);
+bot.on("message", (ctx) => {
+  return ctx.result.sendMessage({text: ctx.message.text});
+});
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-
-    bot.on("message", (ctx) => {
-      return {...ctx.payload, method: 'sendMessage', text: ctx.message.text};
-    });
 
     const results = bot.process(req.body);
     console.log(results);
@@ -17,5 +16,4 @@ export default async function handler(req, res) {
   } else 
 
   res.status(200).send('ok');
-
 }
