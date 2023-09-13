@@ -4,7 +4,7 @@ import Telegrambo from "../lib/telegrambo/index.js";
 const bot = new Telegrambo(process.env.TOKEN);
 bot.on("message", (ctx) => {
   return ctx.result.sendMessage({
-    text:`<pre>${JSON.stringify(ctx.update, null, ' ')}</pre>`,
+    text:`<pre><code>${JSON.stringify(ctx.update, null, ' ')}</code></pre>`,
     parse_mode: 'HTML'
   });
 });
