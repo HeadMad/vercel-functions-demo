@@ -1,4 +1,5 @@
 // import bot from '../src/bot.js';
+import Telegrambo from "../lib/telegrambo/index.js";
 
 const bot = new Telegrambo(process.env.TOKEN);
 
