@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
     const results = bot.process(req.body);
     // console.log(results);
-  }
+  } else 
 
-  // res.status(200).send('ok');
+  res.status(200).send('ok');
 }
