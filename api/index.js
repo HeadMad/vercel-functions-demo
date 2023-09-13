@@ -3,7 +3,7 @@ import Telegrambo from "../lib/telegrambo/index.js";
 
 const bot = new Telegrambo(process.env.TOKEN);
 bot.on("message", (ctx) => {
-  return ctx.result.sendMessage({text: ctx.message.text});
+  return ctx.result.sendMessage({text:`<pre>${JSON.stringify(ctx.update, null, ' ')}</pre>`});
 });
 
 export default async function handler(req, res) {
