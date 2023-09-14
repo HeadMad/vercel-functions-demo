@@ -9,7 +9,7 @@ const bot = new Telegrambo(process.env.TOKEN);
 //   });
 // });
 
-bot.on('message::from', ({result}, event, match) => {
+bot.on('message::from::is_bot::false', ({result}, event, match) => {
   
   return result.sendMessage({text: 'EAH!', event, match})
 });
