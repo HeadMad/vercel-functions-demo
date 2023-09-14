@@ -9,7 +9,7 @@ const bot = new Telegrambo(process.env.TOKEN);
 //   });
 // });
 
-bot.on('message::from::first_name::/павел/i', ({result}, event, match) => {
+bot.on('message::from', ({result}, event, match) => {
   
   return result.sendMessage({text: 'EAH!', event, match})
 });
