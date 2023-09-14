@@ -9,9 +9,9 @@ const bot = new Telegrambo(process.env.TOKEN);
 //   });
 // });
 
-bot.on('message::from::is_bot::false', ({result}, event, match) => {
-  
-  return result.sendMessage({text: 'EAH!', event, match})
+bot.on('message::array::', ({result}, event, match) => {
+  return match
+  // return result.sendMessage({text: 'EAH!', event, match})
 });
 
 export default async function handler(req, res) {
@@ -20,6 +20,7 @@ export default async function handler(req, res) {
     const update = {
       "update_id": 83019677,
       "message": {
+       "array": ["hello", "take", "me", 28736, {some: 'Some', take:24}, ['hi', {take: 18}]],
        "message_id": 2121,
        "from": {
         "id": 1271693775,
@@ -35,13 +36,13 @@ export default async function handler(req, res) {
         "type": "private"
        },
        "date": 1694628327,
-       "text": "Some message"
+       "text": "/start"
       }
      };
 
     const results = bot.process(update);
     console.log(results);
-    res.status(200).json(results[0]);
+    res.status(200).send(`<pre>${JSON.stringify(results, null, ' ')}</pre>`);
 
   } else 
 
