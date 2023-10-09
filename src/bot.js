@@ -9,13 +9,8 @@ bot.on('message::text::hello', ({result}, event, match) => {
 bot.on("message", (ctx) => {
   if (ctx.message.text === '/wifi')
   return ctx.sendMessage({
-    text: 'Нажимай и подключайся к WiFi',
-    parse_mode: 'HTML',
-    reply_markup: {
-      inline_keyboard: [
-        [{text: 'Подключиться к WiFi', url: 'WIFI:S:SFhotel;T:WPA;P:alfa2404;H:false;'}]
-      ]
-    }
+    text: '<a href="https://clck.ru/362cTJ">Подключиться к WiFi</a>',
+    parse_mode: 'HTML'
   });
 
   return ctx.sendMessage({
